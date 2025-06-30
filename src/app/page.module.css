@@ -174,12 +174,12 @@
 
 .buttonSubmit {
   width: 100%;
-  max-width: 100%;
+  max-width: 220px;
 }
 
 .buttonSubmit button {
   width: 100%;
-  padding: 12px;
+  padding: 8px;
   font-size: 1rem; 
   font-weight: 600;
   background-color: #7b3ef4;
