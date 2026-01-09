@@ -1,0 +1,215 @@
+.page {
+  --gray-rgb: 0, 0, 0;
+  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
+  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
+  --button-primary-hover: #383838;
+  --button-secondary-hover: #f2f2f2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100svh;
+  padding: 20px 16px;
+  gap: 32px;
+  font-family: var(--font-geist-sans);
+  opacity: 0;
+  animation: fadeIn 0.8s forwards ease-in;
+}
+
+@media (prefers-color-scheme: dark) {
+  .page {
+    --gray-rgb: 255, 255, 255;
+    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
+    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
+    --button-primary-hover: #ccc;
+    --button-secondary-hover: #1a1a1a;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding: 40px;
+  }
+}
+
+.divEmail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.divEmail input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: 0.5s;
+}
+
+.divPassword {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+}
+
+.divPassword input {
+  width: 100%;
+  padding: 10px 40px 10px 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: 0.5s;
+}
+
+.divEmail input:focus,
+.divPassword input:focus {
+  border-color: rgb(50,46,127);
+  box-shadow: 0 0 8px rgba(73, 64, 230, 0.4);
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.4s ease;
+}
+
+.divPassword button {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #333;
+  transition: 0.5s;
+}
+
+.divPassword button:hover {
+  color: #7b3ef4;
+  transform: translateY(-50%) scale(1.2);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.divPassword button svg {
+  transition: transform 0.4s ease;
+}
+
+
+.divPassword button:active svg {
+  transform: scale(0.9);
+}
+
+@media (prefers-color-scheme: dark) {
+  .divEmail input,
+  .divPassword input {
+    background-color: #111;
+    color: #fff;
+    border: 1px solid #444;
+    transition: 0.5s;
+  }
+
+  .divPassword button {
+    color: #ccc;
+    transition: 0.4s;
+  }
+}
+
+.title h1:hover {
+  transition: 0.5s;
+  transform: scale(1.2);
+}
+
+.labelAnim {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.labelAnim input {
+  width: 100%;
+  padding: 12px 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: transparent;
+  color: inherit;
+}
+
+.labelAnim span {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: #aaa;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.labelAnim input:focus + span, .labelAnim input:not(:placeholder-shown) + span {
+    top: 0;
+    left: 6px;
+    font-size: 0.75rem;
+    color: #7b3ef4;
+    background: rgb(19,19,20);
+    padding: 0 40px;
+    transform: translateY(-50%) translateY(-10px);
+}
+
+.linkDiv {
+  font-size: 16px;
+  color: #7b3ef4;
+  transition: all 0.3s;
+}
+
+.buttonSubmit {
+  width: 100%;
+  max-width: 220px;
+}
+
+.buttonSubmit button {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem; 
+  font-weight: 600;
+  background-color: #7b3ef4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 14px rgba(123, 62, 244, 0.3);
+}
+
+.buttonSubmit button:hover {
+  background-color: #5e2dc1;
+  transform: scale(1.2);
+  box-shadow: 0 6px 16px rgba(123, 62, 244, 0.4);
+}
+
+.buttonSubmit button:active {
+  transform: scale(0.98);
+  box-shadow: 0 3px 10px rgba(123, 62, 244, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  .buttonSubmit button {
+    background-color: #a88eff;
+    color: #111;
+    box-shadow: 0 4px 14px rgba(168, 142, 255, 0.4);
+  }
+  .buttonSubmit button:hover {
+    background-color: #c6b8ff;
+    box-shadow: 0 6px 16px rgba(168, 144, 255, 0.6);
+  }
+}
